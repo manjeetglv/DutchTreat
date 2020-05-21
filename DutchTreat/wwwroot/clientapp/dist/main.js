@@ -749,6 +749,13 @@ class CreateReportCardComponent {
             this.notifyService.showError("", "" + failure.error.errors.toString());
         });
     }
+    ngOnInit() {
+        this.reportCardService.getSchoolYears(1156).subscribe(success => {
+            debugger;
+        }, failure => {
+            debugger;
+        });
+    }
 }
 CreateReportCardComponent.ɵfac = function CreateReportCardComponent_Factory(t) { return new (t || CreateReportCardComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_report_card_service__WEBPACK_IMPORTED_MODULE_2__["ReportCardService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_shared_notification_service__WEBPACK_IMPORTED_MODULE_3__["NotificationService"])); };
 CreateReportCardComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CreateReportCardComponent, selectors: [["create-report-card"]], decls: 94, vars: 36, consts: [[1, "container-fluid"], [1, "navbar", "bg-light"], [1, "nav-item"], [1, "row"], [1, "col-md-12"], [3, "showProgress", "progressMessage"], ["novalidate", ""], ["createReportCardForm", "ngForm"], [1, "form-row"], [1, "form-group", "col-md-4"], ["for", "schoolYear"], ["id", "schoolYear", "name", "schoolYear", 1, "form-control", 3, "ngModel", "ngClass", "ngModelChange"], ["schoolYear", "ngModel"], ["class", "invalid-feedback", 4, "ngIf"], ["for", "category"], ["id", "category", "name", "category", "required", "", 1, "form-control", 3, "ngModel", "ngClass", "ngModelChange"], ["category", "ngModel"], ["for", "period"], ["id", "period", "name", "period", "required", "", 1, "form-control", 3, "ngModel", "ngClass", "ngModelChange"], ["period", "ngModel"], ["for", "grade"], ["id", "grade", "name", "grade", "required", "", 1, "form-control", 3, "ngModel", "ngClass", "ngModelChange"], ["grade", "ngModel"], ["for", "studentFullName"], ["id", "studentFullName", "name", "studentFullName", "required", "", 1, "form-control", 3, "ngModel", "ngClass", "ngModelChange"], ["studentFullName", "ngModel"], ["for", "reportType"], ["id", "reportType", "name", "reportType", "required", "", 1, "form-control", 3, "ngModel", "ngClass", "ngModelChange"], ["reportType", "ngModel"], [1, "form-group"], [1, "col-md-4"], ["for", "layoutSettings"], ["id", "layoutSettings"], ["class", "form-check", 4, "ngFor", "ngForOf"], ["for", "reportCardContent"], ["id", "reportCardContent"], ["for", "gradeSpecificSettings"], ["id", "gradeSpecificSettings"], [1, "btn", "btn-primary", 3, "disabled", "click"], [1, "invalid-feedback"], [1, "form-check"], ["type", "checkbox", 1, "form-check-input", 3, "ngModel", "name", "ngModelChange"]], template: function CreateReportCardComponent_Template(rf, ctx) { if (rf & 1) {
@@ -1114,7 +1121,9 @@ class ReportCardModel {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReportCardService", function() { return ReportCardService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+
 
 
 
@@ -1125,12 +1134,18 @@ class ReportCardService {
     createReportCard(reportCard) {
         return this.http.post("/api/reportCards", reportCard);
     }
+    getSchoolYears(number) {
+        return this.http.get("http://localhost:53268/reports/reportcard/DropdownSchoolYear?schoolId=1156")
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(response => {
+            debugger;
+        }));
+    }
 }
-ReportCardService.ɵfac = function ReportCardService_Factory(t) { return new (t || ReportCardService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
+ReportCardService.ɵfac = function ReportCardService_Factory(t) { return new (t || ReportCardService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"])); };
 ReportCardService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: ReportCardService, factory: ReportCardService.ɵfac });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ReportCardService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
-    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }]; }, null); })();
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }]; }, null); })();
 
 
 /***/ }),

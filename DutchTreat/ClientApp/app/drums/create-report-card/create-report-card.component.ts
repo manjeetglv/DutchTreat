@@ -8,14 +8,14 @@ import {NotificationService} from "../shared/notification.service";
   templateUrl: 'create-report-card.component.html',
   styleUrls: ['create-report-card.component.css']
 })
-export class CreateReportCardComponent {
+export class CreateReportCardComponent implements OnInit{
     constructor(private reportCardService: ReportCardService,private notifyService : NotificationService) {
     }
+   
     public reportCard:ReportCardModel = new ReportCardModel();
     public showMask:boolean;
     public submitMessage:string;
-    public errorMessage: string;
-    public successMessage: string;
+    public schoolYears: string[];
     
     createReportCard(reportCard: ReportCardModel){
         this.showMask = true;
@@ -27,6 +27,14 @@ export class CreateReportCardComponent {
             this.showMask = false;
             debugger;
             this.notifyService.showError("", ""+failure.error.errors.toString());
+        });
+    }
+    
+    ngOnInit(): void {
+        this.reportCardService.getSchoolYears(1156).subscribe(success=>{
+            debugger;
+        }, failure =>{
+            debugger;
         });
     }
 }

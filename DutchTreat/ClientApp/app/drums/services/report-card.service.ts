@@ -12,4 +12,12 @@ export class ReportCardService {
     public createReportCard(reportCard: ReportCardModel){
         return this.http.post("/api/reportCards", reportCard);
     }
+
+    public getSchoolYears(number: number) {
+        return this.http.get("http://localhost:53268/reports/reportcard/DropdownSchoolYear?schoolId=1156")
+            .pipe(map(response => {
+                    debugger;
+                }
+            ));
+    }
 }
