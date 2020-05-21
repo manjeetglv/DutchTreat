@@ -1,0 +1,19 @@
+{
+  "Colors": {
+    "Favorite": "blue"
+  },
+  "ConnectionStrings": {
+    "DutchTreatConnectionString" : "Server=localhost,1433; User=sa; Password=Webilize@2020; Database=DutchTreatDB; MultipleActiveResultSets=true;",
+    "DrumsConnectionString" : "Server=localhost,1433; User=sa; Password=Webilize@2020; Database=DrumsDB; MultipleActiveResultSets=true;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information"
+    }
+  },
+  "Tokens": {
+    "Key": "fsdfadsfadsadfsdfadsfadsad",
+    "Issuer": "localhost",
+    "Audience": "https://localhost:5001"
+  }
+}

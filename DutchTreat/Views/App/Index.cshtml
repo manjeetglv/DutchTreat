@@ -1,0 +1,44 @@
+@{
+    ViewBag.Title = "Home Page";
+    
+}
+
+<div class="row">
+    <div class="col-md-9">
+        <div class="product-info">
+            <img src="~/img/VanGogh.jpg" height="252" width="200" alt="Image not found"/>
+            <h3>Mug</h3>
+            <ul class="product-props">
+                <li>Price: $20</li>
+                <li>Artist: Van Gogh</li>
+                <li>Title: </li>
+                <li>Desctiption: Self-Portrait</li>
+            </ul>
+            <button id="buy-button" class="btn btn-success">Buy</button>
+        </div>
+    
+        <div id="email-form">
+            <form >
+                <label>Your Name:</label>
+                <br/>
+                <input type="text"/>
+                <br/>
+                <label >Email:</label>
+                <br/>
+                <input type="email"/>
+                <br/>
+                <label >Subject:</label>
+                <br/>
+                <input type="text"/>
+                <br/>
+                <label >Message:</label>
+                <br/>
+                <textarea ></textarea>
+                <br/>
+                <input type="submit"  class="btn btn-success" value="Send Message" />
+            </form>    
+        </div> 
+      
+    </div>
+    <div class="col-md-3 bg-dark" ></div>
+</div>

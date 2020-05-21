@@ -1,0 +1,178 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="wwwroot\index.html" />
+      <None Remove="dutch-treat-app\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="ClientApp\app\drums\shared" />
+      <Folder Include="wwwroot\img" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="wwwroot\css\style.css">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="wwwroot\js\js\index.js">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="wwwroot\js\index.js">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="package.json">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="wwwroot\js\jquery\jquery.min.js">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Views\App\Index.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="wwwroot\js\jquery\dist\jquery.min.js">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Views\Shared\_Layout.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Views\_ViewStart.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Views\App\Contact.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Views\App\About.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Views\_ViewImports.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Pages\Error.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Pages\_ViewStart.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="config.json">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Views\App\Shop.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Data\art.json">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Views\Account\Login.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="tsconfig.json">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="wwwroot\js\test.ts">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Remove="dutch-treat-app\**" />
+      <Content Update="wwwroot\js\test.js">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Pages\ReportCard\CreateReportCard.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Views\App\Drums\ReportCard\CreateReportCard.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.4" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.4" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.4" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.4" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />
+      <PackageReference Include="OdeToCode.UseNodeModules" Version="3.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <TypeScriptCompile Include="ClientApp\app\component\cart\cart.component.ts" />
+      <TypeScriptCompile Include="ClientApp\app\component\checkout\checkout.component.ts" />
+      <TypeScriptCompile Include="ClientApp\app\component\shop\shop.component.ts" />
+      <TypeScriptCompile Include="ClientApp\app\drums\models\report-card.model.ts" />
+      <TypeScriptCompile Include="ClientApp\app\drums\models\grade-specific-setting.model.ts" />
+      <TypeScriptCompile Include="ClientApp\app\drums\models\layout-setting.model.ts" />
+      <TypeScriptCompile Include="ClientApp\app\drums\models\report-card-content-setting.model.ts" />
+      <TypeScriptCompile Include="ClientApp\app\drums\services\report-card.service.ts" />
+      <TypeScriptCompile Include="ClientApp\app\login\login.component.ts" />
+      <TypeScriptCompile Include="ClientApp\app\shared\dataService.ts" />
+      <TypeScriptCompile Include="ClientApp\app\shared\order.ts" />
+      <TypeScriptCompile Include="ClientApp\app\shared\product.ts" />
+      <TypeScriptCompile Include="wwwroot\ts\main.ts" />
+      <TypeScriptCompile Include="wwwroot\ts\storeCustomer.ts" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="dutch-treat-app\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="dutch-treat-app\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="dutch-treat-app\angular.json" />
+      <_ContentIncludedByDefault Remove="dutch-treat-app\e2e\tsconfig.json" />
+      <_ContentIncludedByDefault Remove="dutch-treat-app\package-lock.json" />
+      <_ContentIncludedByDefault Remove="dutch-treat-app\package.json" />
+      <_ContentIncludedByDefault Remove="dutch-treat-app\tsconfig.app.json" />
+      <_ContentIncludedByDefault Remove="dutch-treat-app\tsconfig.json" />
+      <_ContentIncludedByDefault Remove="dutch-treat-app\tsconfig.spec.json" />
+      <_ContentIncludedByDefault Remove="dutch-treat-app\tslint.json" />
+      <_ContentIncludedByDefault Remove="Views\Drums\ReportCard\CreateReportCard.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Drums.Data\Drums.Data.csproj" />
+    </ItemGroup>
+
+<!--  <ItemGroup>-->
+<!--    <None Include="node_modules\**"-->
+<!--          CopyToPublishDirectory="Always"/>-->
+<!--  </ItemGroup>-->
+  
+    <Target Name="MyPublishScripts" BeforeTargets="BeforePublish">
+      <Exec Command="npm install" />
+      <Exec Command="gulp" />
+      <Exec Command="ng build" />
+    </Target>
+</Project>

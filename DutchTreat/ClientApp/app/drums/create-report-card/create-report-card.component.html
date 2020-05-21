@@ -1,0 +1,159 @@
+<div class="container-fluid">
+    <div class="navbar bg-light">
+        <div class="nav-item">
+            <b>Create Report Card</b>
+        </div>
+    </div>
+   <div class="row">
+       <div class="col-md-12"><app-form-submit-alert [showProgress]="showMask" [progressMessage]="submitMessage"></app-form-submit-alert></div>
+       <div class="col-md-12">
+           <form #createReportCardForm="ngForm" novalidate>
+<!--               <div  *ngIf="errorMessage" class="alert alert-danger alert-dismissible" data-auto-dismiss role="alert">-->
+<!--                   <button class="close" aria-label="close" data-dismiss="alert">&times;</button>-->
+<!--                   <span id="alertMsgError">{{errorMessage}}</span>-->
+<!--               </div>-->
+<!--               <div  *ngIf="successMessage" class="alert alert-success alert-dismissible" data-auto-dismiss role="alert">-->
+<!--                   <button class="close" aria-label="close" data-dismiss="alert">&times;</button>-->
+<!--                   <span id="alertMsgSuccess">{{successMessage}}</span>-->
+<!--               </div>-->
+               <div class="form-row">
+                   <div class="form-group col-md-4">
+                       <label for="schoolYear">Select School Year</label>
+                       <select id="schoolYear" name="schoolYear" class="form-control" [(ngModel)]="reportCard.schoolYear" #schoolYear="ngModel" [ngClass]="{ 'is-invalid':schoolYear.touched && schoolYear.invalid }" >
+                           <option>2018-2019</option>
+                           <option>2019-2020</option>
+                       </select>
+                       <div class="invalid-feedback" *ngIf="schoolYear.touched && schoolYear.invalid && schoolYear.errors.required">School Year is required.</div>
+                   </div>
+                   <div class="form-group col-md-4">
+                       <label for="category">Select Category</label>
+                       <select id="category" name="category" class="form-control" [(ngModel)]="reportCard.category" #category="ngModel" [ngClass]="{ 'is-invalid':category.touched && category.invalid }"  required>
+                           <option>Full Year</option>
+                           <option>1st Semester</option>
+                       </select>
+                       <div class="invalid-feedback" *ngIf="category.touched && category.invalid && category.errors.required">Category is required.</div>
+                   </div>
+                   <div class="form-group col-md-4">
+                       <label for="period">Select Report Period</label>
+                       <select id="period" name="period" class="form-control" [(ngModel)]="reportCard.period" #period="ngModel"  [ngClass]="{ 'is-invalid':period.touched && period.invalid }"  required>
+                           <option>Final</option>
+                           <option>1st Year</option>
+                       </select>
+                       <div class="invalid-feedback" *ngIf="period.touched && period.invalid && period.errors.required">Period is required.</div>
+                   </div>
+               </div>
+               <div class="form-row">
+                   <div class="form-group col-md-4">
+                       <label for="grade">Select Grade</label>
+                       <select id="grade" name="grade" class="form-control" [(ngModel)]="reportCard.grade" #grade="ngModel" [ngClass]="{ 'is-invalid':grade.touched && grade.invalid }"  required>
+                           <option>Grade 12</option>
+                           <option>Grade 11</option>
+                       </select>
+                       <div class="invalid-feedback" *ngIf="grade.touched && grade.invalid && grade.errors.required">Grade is required.</div>
+                   </div>
+                   <div class="form-group col-md-4">
+                       <label for="studentFullName">Select Student</label>
+                       <select id="studentFullName" name="studentFullName" class="form-control" [(ngModel)]="reportCard.studentFullName" #studentFullName="ngModel" [ngClass]="{ 'is-invalid':studentFullName.touched && studentFullName.invalid }"  required>
+                           <option >Bruce Wane</option>
+                           <option>Jane Smith</option>
+                       </select>
+                       <div class="invalid-feedback" *ngIf="studentFullName.touched && studentFullName.invalid && studentFullName.errors.required">Student name is required.</div>
+                   </div>
+                   <div class="form-group col-md-4">
+                       <label for="reportType">Report Card Type</label>
+                       <select id="reportType" name="reportType" class="form-control" [(ngModel)]="reportCard.reportType" #reportType="ngModel" [ngClass]="{ 'is-invalid':reportType.touched && reportType.invalid }"  required>
+                           <option>Detailed Report</option>
+                           <option>Semester Report</option>
+                       </select>
+                       <div class="invalid-feedback" *ngIf="reportType.touched && reportType.invalid && reportType.errors.required">Report card type is required.</div>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <div class="row">
+                       <div class="col-md-4">
+                           <label for="layoutSettings">Layout Settings</label>
+                           <div id="layoutSettings">
+                               <div class="form-check" *ngFor="let layoutSetting of reportCard.layoutSettings; index as i">
+                                   <label>
+                                       <input class="form-check-input"  type="checkbox" [(ngModel)]="layoutSetting.value" name="layoutSettingCheckBox+{{i}}">{{layoutSetting.name}}
+                                   </label>
+                               </div>
+<!--                               <div class="form-check">-->
+<!--                                   <label>-->
+<!--                                       <input class="form-check-input" name="showHeaderOnAllPages" type="checkbox" [(ngModel)]="reportCard.layoutSettings.showHeaderOnAllPages">Show Headers on All Pages-->
+<!--                                   </label>-->
+<!--                               </div>-->
+<!--                               <div class="form-check">-->
+<!--                                   <label>-->
+<!--                                       <input class="form-check-input" name="showMinistryOfEducationLogo" type="checkbox" [(ngModel)]="reportCard.layoutSettings.showMinistryOfEducationLogo" >Show Ministry of Education Logo-->
+<!--                                   </label>-->
+<!--                               </div>-->
+<!--                               <div class="form-check">-->
+<!--                                   <label>-->
+<!--                                       <input class="form-check-input" name="showPageNumber" type="checkbox" [(ngModel)]="reportCard.layoutSettings.showPageNumber">Show Page Number-->
+<!--                                   </label>-->
+<!--                               </div>-->
+<!--                               <div class="form-check">-->
+<!--                                   <label>-->
+<!--                                       <input class="form-check-input" name="showPrintDate" type="checkbox" [(ngModel)]="reportCard.layoutSettings.showPrintDate">Show Print Date-->
+<!--                                   </label>-->
+<!--                               </div>-->
+                           </div>
+                       </div>
+                       <div class="col-md-4">
+                           <label for="reportCardContent">Report Card Content</label>
+                           <div id="reportCardContent">
+                               <div class="form-check" *ngFor="let reportCardContentSetting of reportCard.reportCardContentSettings; index as i">
+                                   <label>
+                                       <input class="form-check-input" type="checkbox" [(ngModel)]="reportCardContentSetting.value" name="reportCardContentSettingCheckBox+{{i}}">{{reportCardContentSetting.name}}
+                                   </label>
+                               </div>
+<!--                               <div class="form-check">-->
+<!--                                   <label>-->
+<!--                                       <input class="form-check-input" name="showSnapshotOfLearning" type="checkbox" [(ngModel)]="reportCard.reportCardContentSettings.showSnapshotOfLearning">Show Snapshot of Learning-->
+<!--                                   </label>-->
+<!--                               </div>-->
+<!--                               <div class="form-check">-->
+<!--                                   <label>-->
+<!--                                       <input class="form-check-input" name="excludeTermEvaluation" type="checkbox" [(ngModel)]="reportCard.reportCardContentSettings.excludeTermEvaluation">Exclude Term Evaluations-->
+<!--                                   </label>-->
+<!--                               </div>-->
+<!--                               <div class="form-check">-->
+<!--                                   <label>-->
+<!--                                       <input class="form-check-input" name="hideStudentSummaryPage" type="checkbox" [(ngModel)]="reportCard.reportCardContentSettings.hideStudentSummaryPage">Hide Student Summary Page-->
+<!--                                   </label>-->
+<!--                               </div>-->
+<!--                               <div class="form-check">-->
+<!--                                   <label>-->
+<!--                                       <input class="form-check-input" name="hideSMARTGoals" type="checkbox" [(ngModel)]="reportCard.reportCardContentSettings.hideSMARTGoals">Hide SMART Goals-->
+<!--                                   </label>-->
+<!--                               </div>-->
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <div class="row">
+                       <div class="col-md-4">
+                           <label for="gradeSpecificSettings">Grade Specific Settings</label>
+                           <div id="gradeSpecificSettings">
+                               <div class="form-check" *ngFor="let gradeSpecificSetting of reportCard.gradeSpecificSettings; index as i">
+                                   <label>
+                                       <input class="form-check-input" type="checkbox" [(ngModel)]="gradeSpecificSetting.value" name="gradeSpecificSettingCheckBox+{{i}}">{{gradeSpecificSetting.name}}
+                                   </label>
+                               </div>
+<!--                               <div class="form-check">-->
+<!--                                   <label>-->
+<!--                                       <input class="form-check-input" name="showGraduationRequirements" type="checkbox" [(ngModel)]="reportCard.gradeSpecificSettings.showGraduationRequirements">Show Graduation Requirements-->
+<!--                                   </label>-->
+<!--                               </div>-->
+                           </div>
+                       </div>
+                   </div>
+               </div>
+<!--               <button class="btn btn-primary">Preview Report Card</button>-->
+               <button (click)="createReportCard(reportCard)" class="btn btn-primary" [disabled]="createReportCardForm.form.invalid">Create Report Card</button>
+           </form>
+       </div>
+   </div>
+</div>

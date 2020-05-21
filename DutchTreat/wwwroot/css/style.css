@@ -1,0 +1,82 @@
+/*body {*/
+/*    font-family: sans-serif;*/
+/*}*/
+
+/*input,textarea {*/
+/*    font-size: 18px;*/
+/*    width: 500px;*/
+/*}*/
+
+/*label{*/
+/*    font-size: 16px;*/
+/*}*/
+
+/*div#email-form {*/
+/*    background-color: #e3e0e0;*/
+/*}*/
+
+/*div#email-form input[type=submit]{*/
+/*    width: auto;*/
+/*    background-color: #57c648;*/
+/*    color: aliceblue;*/
+/*}*/
+
+/*ul.product-props {*/
+/*    font-size: small;*/
+/*}*/
+
+/*ul.product-props li{*/
+/*    list-style-type: none;*/
+/*}*/
+
+/*div.product-info {*/
+/*    border: 1px solid darkslategrey;*/
+/*    display: inline-block;*/
+/*    padding: 4px 2px;*/
+/*    margin: 2px;*/
+/*    width: 50%;*/
+/*    background-color: aliceblue;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*div.product-info img {*/
+/*    margin: 2px;*/
+/*    float: left;*/
+/*    border: 1px solid black;*/
+/*    max-width: 200px;*/
+/*}*/
+
+/*div#login-toggle {*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*form.popup-form {*/
+/*    padding: 5px;*/
+/*    border: 2px black inset;*/
+/*    display: inline-block;*/
+/*}*/
+
+/*form.popup-form input {*/
+/*    width: 200px;*/
+/*}*/
+
+/*form.popup-form label {*/
+/*    width: 150px;*/
+/*    display: inline-block;*/
+/*}*/
+
+/*form.popup-form input[type=checkbox], form.popup-form input[type=submit] {*/
+/*    width: auto;*/
+/*}*/
+
+/*menu li {*/
+/*    display: inline;*/
+/*}*/
+
+/*menu li::after{*/
+/*    content: " |";*/
+/*}*/
+
+/*menu li:last-of-type::after{*/
+/*    content: "";*/
+/*}*/
