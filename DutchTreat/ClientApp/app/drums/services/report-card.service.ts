@@ -14,10 +14,10 @@ export class ReportCardService {
     }
 
     public getSchoolYears(number: number) {
-        return this.http.get("http://localhost:53268/reports/reportcard/DropdownSchoolYear?schoolId=1156")
-            .pipe(map(response => {
-                    debugger;
-                }
-            ));
+        return this.http.get("http://localhost:53268/reports/reportcard/DropdownSchoolYear?schoolId=1156");
+            //.pipe(map(response => {
+            //        debugger;
+            //    }
+            //));
     }
 }

@@ -31,7 +31,8 @@ export class CreateReportCardComponent implements OnInit{
     }
     
     ngOnInit(): void {
-        this.reportCardService.getSchoolYears(1156).subscribe(success=>{
+        this.reportCardService.getSchoolYears(1156).subscribe(success => {
+            this.schoolYears = Object.values(success);
             debugger;
         }, failure =>{
             debugger;

@@ -20,8 +20,8 @@
                    <div class="form-group col-md-4">
                        <label for="schoolYear">Select School Year</label>
                        <select id="schoolYear" name="schoolYear" class="form-control" [(ngModel)]="reportCard.schoolYear" #schoolYear="ngModel" [ngClass]="{ 'is-invalid':schoolYear.touched && schoolYear.invalid }" >
-                           <option>2018-2019</option>
-                           <option>2019-2020</option>
+                           <option >Please select school year</option>
+                           <option *ngFor="let schoolYear of schoolYears; index as i" >{{schoolYear.schoolYear}}</option>
                        </select>
                        <div class="invalid-feedback" *ngIf="schoolYear.touched && schoolYear.invalid && schoolYear.errors.required">School Year is required.</div>
                    </div>
